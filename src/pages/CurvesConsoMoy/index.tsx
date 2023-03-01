@@ -12,16 +12,18 @@ const DataVizCurrentYear: React.FC<IDataViz> = ({dataViz}) => {
 	return (
 		<Container className="border py-2">
 			<NavDataviz>
+				{/* (2014 - 2029) */}
 				<ButtonDefault
 					color="blue"
-					label="Consommation attendue (2014 - 2029)"
+					label="Consommation attendue "
 					size="xs"
 					className="btn btn-info m-lg-2 py-2 m-lg-2"
 					onClick={fetchData}
 				/>
+				{/* (2014 - 2021) */}
 				<ButtonDefault
 					color="blue"
-					label="Consommation réalisées (2014 - 2021)"
+					label="Consommation réalisées"
 					size="xs"
 					className="btn btn-primary py-2 m-lg-2"
 					onClick={fetchData}
