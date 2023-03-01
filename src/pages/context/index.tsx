@@ -42,7 +42,7 @@ export const ContextProvider: React.FC<Props> = ({children}) => {
 				SetData(response);
 			})
 			.catch((error) => {
-				throw new Error("Failed data", error);
+				throw new Error("Failed dataviz", error);
 			});
 	};
 
