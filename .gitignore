@@ -11,7 +11,9 @@
 # production
 /build
 
+#order
 package-lock.json
+notes.txt
 
 # misc
 .DS_Store

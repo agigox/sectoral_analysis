@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "components/Layout";
+import DataVizCurrentYear from "pages/CurvesConsoMoy";
+import Header from "components/Header";
+import {Col} from "reactstrap";
+import {ICurvesConsoContextType, useCurvesConsoContext} from "pages/context";
+import DataVizConsumption20192022 from "modules/DataVizConso-2019-2022";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC<{}> = () => {
+	const {dataFetch}: ICurvesConsoContextType = useCurvesConsoContext();
+	console.log(dataFetch, "data");
+	return (
+		<Layout>
+			<Header>
+				<Col className="border w-100 py-4 text-xl-center">
+					<h1 className="fw-bold">
+						Analyse de la consommation de cet hiver 24-02-2023
+					</h1>
+				</Col>
+			</Header>
+			<DataVizCurrentYear
+				dataViz={<DataVizConsumption20192022 dataApi={dataFetch} />}
+			/>
+		</Layout>
+	);
+};
 
 export default App;
