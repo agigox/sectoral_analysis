@@ -27,7 +27,7 @@ ChartJS.register(
 	Legend
 );
 const DataVizConsumption20192022: React.FC<IDataViz20192022> = ({dataApi}) => {
-	console.log(dataApi, "dataApi");
+	console.log(dataApi, "dataApi fetch");
 	const data = {
 		labels,
 		datasets: [
